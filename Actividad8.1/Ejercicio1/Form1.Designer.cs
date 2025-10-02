@@ -37,6 +37,9 @@
             btnConfirmar = new Button();
             listBox1 = new ListBox();
             btnActualizar = new Button();
+            openFileDialog1 = new OpenFileDialog();
+            saveFileDialog1 = new SaveFileDialog();
+            btnImportar = new Button();
             SuspendLayout();
             // 
             // Nombre
@@ -116,11 +119,26 @@
             btnActualizar.UseVisualStyleBackColor = true;
             btnActualizar.Click += btnActualizar_Click;
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btnImportar
+            // 
+            btnImportar.Location = new Point(12, 325);
+            btnImportar.Name = "btnImportar";
+            btnImportar.Size = new Size(94, 29);
+            btnImportar.TabIndex = 9;
+            btnImportar.Text = "Importar";
+            btnImportar.UseVisualStyleBackColor = true;
+            btnImportar.Click += btnImportar_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(405, 310);
+            ClientSize = new Size(405, 396);
+            Controls.Add(btnImportar);
             Controls.Add(btnActualizar);
             Controls.Add(listBox1);
             Controls.Add(btnConfirmar);
@@ -148,5 +166,8 @@
         private Button btnConfirmar;
         private ListBox listBox1;
         private Button btnActualizar;
+        private OpenFileDialog openFileDialog1;
+        private SaveFileDialog saveFileDialog1;
+        private Button btnImportar;
     }
 }

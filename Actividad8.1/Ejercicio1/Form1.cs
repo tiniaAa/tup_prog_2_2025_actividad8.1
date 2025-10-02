@@ -69,6 +69,35 @@ namespace Ejercicio1
             }
         }
 
+        private void btnImportar_Click(object sender, EventArgs e)
+        {
+
+            if (openFileDialog1.ShowDialog()==DialogResult.OK)
+            {
+                string path = openFileDialog1.FileName;
+                FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
+                StreamReader rd = new StreamReader(fs);
+
+                while (rd.EndOfStream == false)
+                {
+                    string Linea = rd.ReadLine();
+                    string dni = Linea.Substring(0,9);
+                    string nombre = Linea.Substring(9,10).Trim();
+                    string importe = Linea.Substring(19,9);
+
+                    Cuenta c = new Cuenta(nombre,Convert.ToInt32(dni),Convert.ToDouble(importe));
+
+                }
+            }
+
+            //openFileDialog1.Filter = "Archivo TXT |*.txt| Todos los archivos|*.*";
+
+
+
+        }
+
+      
+
         //private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         //{
 
